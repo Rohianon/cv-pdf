@@ -75,4 +75,30 @@ export const RESUME_DATA = {
         "As a mentor, I proved an invaluable member of the team delivering groundbreaking research article related to Sentiment Analysis and NLP during the COVID-19 pandemic enhancing my research experience.",
     },
   ],
-}
+  skills: [
+    "Python",
+    "Flask",
+    "PostgresSQL",
+    "Javascript",
+    "TypeScript",
+    "React/Next.js",
+    "Node.js",
+  ],
+  projects: [
+    {
+      name: "Covid-19 Dashboard",
+      techStack: [
+        "Side Project",
+        "Python",
+        "Streamlit",
+      ],
+      description:
+        "A dashboard that provides insights on the Covid-19 pandemic in Kenya",
+      link: {
+        label: "github.com",
+        href: "https://covid19.ke",
+      },
+      source: null
+    },
+  ]
+} as const
