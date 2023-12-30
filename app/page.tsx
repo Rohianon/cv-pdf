@@ -1,4 +1,6 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { Section } from "@/components/ui/section"
 import { RESUME_DATA } from "@/data/resume-data"
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react"
 
@@ -61,8 +63,31 @@ export default function Home() {
                 </Button>
               ))}
             </div>
+            <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
+              {RESUME_DATA.contact.email ? (
+                <a href={`mailto: ${RESUME_DATA.contact.email}`}>
+                  <span className="underline">{RESUME_DATA.contact.email}</span>
+                </a>
+              ) : null}
+              {RESUME_DATA.contact.tel ? (
+                <a href={`tel: ${RESUME_DATA.contact.tel}`}>
+                  <span className="underline">{RESUME_DATA.contact.tel}</span>
+                </a>
+              ) : null}
+            </div>
           </div>
+
+          <Avatar className="h-28 w-28">
+            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
+            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+          </Avatar>
         </div>
+        <Section>
+          <h2 className="text-xl font-bold">About</h2>
+          <p className="text-pretty font-mono text-sm text-muted-foreground">
+            {RESUME_DATA.summary}
+          </p>
+        </Section>
       </section>
     </main>
   )
